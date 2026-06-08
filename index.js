@@ -22,7 +22,7 @@ let posts = [
     {
     id:uuidv4(),
     username:"Sakshi",
-    content : "Hi..! I am a full stack developer. I have got a really nice package as a fresher. Thanks to the Universe." 
+    content : "Hi..! I am a full stack developer." 
     },
     {
     id:uuidv4(), 
@@ -30,7 +30,9 @@ let posts = [
     content : "Hard Work is important to achieve success" 
     }
 ]
-
+app.get("/", (req, res) => {
+    res.redirect("/posts");
+});
 app.get("/posts", (req,res)=>{
     res.render("index.ejs",{posts})
 })
