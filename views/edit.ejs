@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Post · Quora</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/posts" class="navbar-brand">
+      <span class="brand-dot"></span>
+      Quora
+    </a>
+    <div class="navbar-actions">
+      <a href="/posts" class="btn btn-ghost">Cancel</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <a href="/posts/<%= post.id %>" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to post
+    </a>
+
+    <div class="form-card">
+      <h1 class="form-title">Edit your post</h1>
+      <p class="form-subtitle">Update the content below. Only the post body can be edited.</p>
+
+      <!-- Author info (read-only display) -->
+      <div class="edit-info">
+        <div class="avatar"><%= post.username.charAt(0).toUpperCase() %></div>
+        <div class="edit-info-text">
+          Editing post by <strong><%= post.username %></strong>
+          <br>
+          <span style="font-size:0.75rem;color:var(--text-3);">ID: <%= post.id %></span>
+        </div>
+      </div>
+
+      <form action="/posts/<%= post.id %>?_method=PATCH" method="post">
+        <div class="form-group">
+          <label class="form-label" for="content">Post Content</label>
+          <textarea
+            class="form-textarea"
+            id="content"
+            name="content"
+            required
+          ><%= post.content %></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Changes
+          </button>
+          <a href="/posts/<%= post.id %>" class="btn btn-ghost">Discard</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

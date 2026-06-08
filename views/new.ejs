@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Post · Quora</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="/posts" class="navbar-brand">
+      <span class="brand-dot"></span>
+      Quora
+    </a>
+    <div class="navbar-actions">
+      <a href="/posts" class="btn btn-ghost">Cancel</a>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <a href="/posts" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to feed
+    </a>
+
+    <div class="form-card">
+      <h1 class="form-title">Share your thoughts</h1>
+      <p class="form-subtitle">Your post will appear on the public feed.</p>
+
+      <form action="/posts" method="post">
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input
+            class="form-input"
+            type="text"
+            id="username"
+            name="username"
+            placeholder="e.g. Rahul Kumar"
+            required
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="content">Your Post</label>
+          <textarea
+            class="form-textarea"
+            id="content"
+            name="content"
+            placeholder="What's on your mind?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Publish Post
+          </button>
+          <a href="/posts" class="btn btn-ghost">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
